@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: learningplat 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: learningplat
+  template:
+    metadata:
+      labels:
+        app: learningplat 
+    spec:
+      containers:
+        - name: learningplat 
+          image: tesfrt.azurecr.io/learningplat
+          ports:
+          - containerPort: 8080
